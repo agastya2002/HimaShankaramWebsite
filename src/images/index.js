@@ -29,8 +29,12 @@ import tn_13 from './thumbnails/13_tn.jpg';
 import tn_paper_1 from './thumbnails/paper_1_tn.jpg';
 import tn_paper_2 from'./thumbnails/paper_2_tn.jpg';
 import underline from './underline.png';
+import card1 from './card1.jpg';
+import card2 from './card2.jpg';
+import card3 from './card3.jpg';
+import card4 from './card4.jpg';
 
 
 export {
-  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, paper_1, paper_2, tn_1, tn_2, tn_3, tn_4, tn_5, tn_6, tn_7, tn_8, tn_9, tn_10, tn_11, tn_12, tn_13, tn_paper_1, tn_paper_2, underline
+  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, paper_1, paper_2, tn_1, tn_2, tn_3, tn_4, tn_5, tn_6, tn_7, tn_8, tn_9, tn_10, tn_11, tn_12, tn_13, tn_paper_1, tn_paper_2, underline, card1, card2, card3, card4
 };
