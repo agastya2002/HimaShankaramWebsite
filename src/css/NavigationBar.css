@@ -1,0 +1,21 @@
+.text-center {
+  font-size: 0.8em;
+}
+
+.navbar {
+  background-color: rgba(255,255,255, 0.8);
+}
+
+@media (min-width: 992px) { 
+  .navbar {
+    font-size: 1.5em;
+    padding-left: 50px;
+  }
+  .brand {
+    font-size: 1.2em;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
