@@ -2,7 +2,8 @@
 .flip-card {
   background-color: transparent;
   width: 350px;
-  height: 450px;
+  min-height: 450px;
+  height: fit-content;
   border-radius: 20px;
   margin: 10px;
 }
