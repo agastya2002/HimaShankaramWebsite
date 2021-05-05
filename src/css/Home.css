@@ -1,16 +1,23 @@
 /* Home */
-.home {
+.homeOuter {
   background-image: url('../images/1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+  width: 100vw;
+  background-color: #FEA501;
+}
+.home {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-transition-property: background-image;
   -webkit-transition-duration: 1.0s;
   -webkit-transition-timing-function: ease-out;
-  background-color: #FEA501;
+  background-color: transparent;
   height: 90vh;
   width: 100vw;
-  padding-top: 20px;
 }
 
 
