@@ -5,6 +5,7 @@ import {Row, Col} from 'react-bootstrap'
 import 'react-gallery-carousel/dist/index.css';
 import { img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, paper_1, paper_2, tn_1, tn_2, tn_3, tn_4, tn_5, tn_6, tn_7, tn_8, tn_9, tn_10, tn_11, tn_12, tn_13, tn_paper_1, tn_paper_2, underline, card1, card2, card3, card4} from '../images/index.js';
 import FlipCard from './FlipCard.js'
+import Trustee from './Trustee.js'
 import '../css/Home.css'
 
 function Home() {
@@ -154,6 +155,34 @@ function Home() {
             </Col>
             <Col xs={12} md={6} lg={3}>
               <FlipCard img={card4} title="Skill Training" descr="The Trust envisions to facilitate imparting training and skills to the needy to equip themselves to be able to win their livelihood on their own"/>
+            </Col>
+          </Row>
+        </div>
+      </div>
+      <div id="trustees" >
+        <div className="trustees">
+          <h1>Trustees</h1>
+          <img src={underline} alt=''/>
+        </div>
+        <div>
+          <Row className="trustee">
+            <Col xs={12} md={6} lg={4}>
+              <Trustee img={card3} name="John Doe" />
+            </Col>
+            <Col xs={12} md={6} lg={4}>
+              <Trustee img={card3} name="John Doe" />
+            </Col>
+            <Col xs={12} md={6} lg={4}>
+              <Trustee img={card3} name="John Doe" />
+            </Col>
+            <Col xs={12} md={6} lg={4}>
+              <Trustee img={card3} name="John Doe" />
+            </Col>
+            <Col xs={12} md={6} lg={4}>
+              <Trustee img={card3} name="John Doe" />
+            </Col>
+            <Col xs={12} md={6} lg={4}>
+              <Trustee img={card3} name="John Doe" />
             </Col>
           </Row>
         </div>

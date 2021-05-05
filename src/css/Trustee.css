@@ -1,0 +1,10 @@
+.trusteeImg {
+  border-radius: 300px;
+  width: 300px;
+  height: 300px;
+}
+
+.trustee {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

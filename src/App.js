@@ -1,4 +1,5 @@
 import NavgationBar from './Components/NavigationBar.js'
+import Footer from './Components/Footer.js'
 import Home from './Components/Home.js'
 import './App.css';
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <NavgationBar />
       <Home />
+      <Footer />
     </>
   );
 }
