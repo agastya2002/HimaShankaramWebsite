@@ -15,6 +15,7 @@ function NavigationBar() {
           <Nav.Link href="/#gallery">Gallery</Nav.Link>
           <Nav.Link href="#vision">Vision</Nav.Link>
           <Nav.Link href="#trustees">Trustees</Nav.Link>
+          <Nav.Link href="#contact">Contact</Nav.Link>
         </Nav>
       </ Navbar.Collapse>
     </Navbar>

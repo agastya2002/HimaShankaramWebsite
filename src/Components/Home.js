@@ -73,38 +73,12 @@ function Home() {
     },
   ];
 
-  const changeBg = () => {
-    const images = [
-      `url(${img1})`,
-      `url(${img2})`,
-      `url(${img3})`,
-      `url(${img4})`,
-      `url(${img5})`,
-      `url(${img6})`,
-      `url(${img7})`,
-      `url(${img8})`,
-      `url(${img9})`,
-      `url(${img10})`,
-      `url(${img11})`,
-      `url(${img13})`,
-    ];
-    const home = document.querySelector('.home');
-    const bg = images[Math.floor(Math.random() * images.length)];
-    home.style.backgroundImage = bg;
-  }
-
-  useEffect(() => {
-    setInterval(changeBg, 2000);
-  });
-
   return (
     <div>
-      <div className="homeOuter">
-        <div id="home" className="home">
+      <div id="home" className="home">
           <section>
             <h1>HIMA SHANKARAM CHARITABLE TRUST</h1>
           </section>
-        </div>
       </div>
       <div id="objectives" className="objectives">
         <h1>Our Main Objectives</h1>
@@ -168,26 +142,49 @@ function Home() {
         </div>
         <div>
           <Row className="trustee">
-            <Col xs={12} md={6} lg={4}>
-              <Trustee img={card3} name="John Doe" />
+            <Col xs={12} md={12} lg={12}>
+              <Trustee img={card3} name="Chairman" />
             </Col>
             <Col xs={12} md={6} lg={4}>
-              <Trustee img={card3} name="John Doe" />
+              <Trustee img={card3} name="Trustee" />
             </Col>
             <Col xs={12} md={6} lg={4}>
-              <Trustee img={card3} name="John Doe" />
+              <Trustee img={card3} name="Trustee" />
             </Col>
             <Col xs={12} md={6} lg={4}>
-              <Trustee img={card3} name="John Doe" />
+              <Trustee img={card3} name="Trustee" />
             </Col>
             <Col xs={12} md={6} lg={4}>
-              <Trustee img={card3} name="John Doe" />
+              <Trustee img={card3} name="Trustee" />
             </Col>
             <Col xs={12} md={6} lg={4}>
-              <Trustee img={card3} name="John Doe" />
+              <Trustee img={card3} name="Trustee" />
+            </Col>
+            <Col xs={12} md={6} lg={4}>
+              <Trustee img={card3} name="Trustee" />
             </Col>
           </Row>
         </div>
+      </div>
+      <div id="contact" >
+        <div className="contact">
+          <h1>Contact Us</h1>
+          <img src={underline} alt=''/>
+        </div>
+        <Row className="contactRow">
+          <Col xs={12} lg={4}>
+            <div><i class="fa fa-phone icon" aria-hidden="true"/></div>
+            <div>1800-234-7689</div>
+          </Col>
+          <Col xs={12} lg={4}>
+            <div><i class="fa fa-envelope icon" aria-hidden="true"/></div>
+            <div>abc@gmail.com</div>
+          </Col>
+          <Col xs={12} lg={4}>
+            <div><i class="fa fa-home icon" aria-hidden="true"/></div>
+            <div>Visakhapatnam, Andhra Pradesh, India</div>
+          </Col>
+        </Row>
       </div>
     </ div>
   )
