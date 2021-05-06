@@ -10,11 +10,12 @@ function Footer() {
             <div class="col-xs-12 col-sm-6 col-md-6">
               <h5>Quick links</h5>
               <ul class="list-unstyled quick-links">
-                <li><a href="/#home"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                <li><a href="/#objectives"><i class="fa fa-angle-double-right"></i>Objective</a></li>
-                <li><a href="/#gallery"><i class="fa fa-angle-double-right"></i>Gallery</a></li>
-                <li><a href="#vision"><i class="fa fa-angle-double-right"></i>Vision</a></li>
-                <li><a href="#trustees"><i class="fa fa-angle-double-right"></i>Trustees</a></li>
+                <li><a href="/home"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                <li><a href="/objectives"><i class="fa fa-angle-double-right"></i>Objective</a></li>
+                <li><a href="/gallery"><i class="fa fa-angle-double-right"></i>Gallery</a></li>
+                <li><a href="/vision"><i class="fa fa-angle-double-right"></i>Vision</a></li>
+                <li><a href="/trustees"><i class="fa fa-angle-double-right"></i>Trustees</a></li>
+                <li><a href="/contact"><i class="fa fa-angle-double-right"></i>Contact</a></li>
               </ul>
             </div>
 
