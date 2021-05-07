@@ -1,7 +1,6 @@
 import NavgationBar from './Components/NavigationBar.js'
 import Footer from './Components/Footer.js'
 import Home from './Components/Home.js'
-import Objectives from './Components/Objectives.js'
 import Gallery from './Components/Gallery.js'
 import Vision from './Components/Vision.js'
 import Trustees from './Components/Trustees.js'
@@ -18,7 +17,6 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path='/home' component={Home} />
-          <Route path='/objective' component={Objectives} />
           <Route path='/gallery' component={Gallery} />
           <Route path='/vision' component={Vision} />
           <Route path='/trustees' component={Trustees} />

@@ -1,4 +1,5 @@
 import React from 'react'
+import Objectives from './Objectives.js'
 import '../css/Home.css'
 
 
@@ -10,6 +11,7 @@ function Home() {
             <h1>HIMA SHANKARAM CHARITABLE TRUST</h1>
           </section>
       </div>
+      <Objectives />
     </ div>
   )
 }
