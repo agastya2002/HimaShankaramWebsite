@@ -33,8 +33,14 @@ import card1 from './card1.jpg';
 import card2 from './card2.jpg';
 import card3 from './card3.jpg';
 import card4 from './card4.jpg';
-
+import trustee0 from './trustees/G S RAJU.jpg';
+import trustee1 from './trustees/K V V G DIWAKAR.jpg';
+import trustee2 from './trustees/D RAVI VARMA.jpg';
+import trustee3 from './trustees/D C P VISALA.jpg';
+import trustee4 from './trustees/G PAVAN KUMAR.jpg';
+import trustee5 from './trustees/P CHAYA.jpg';
+import trustee6 from './trustees/K SUSEELA.jpg';
 
 export {
-  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, paper_1, paper_2, tn_1, tn_2, tn_3, tn_4, tn_5, tn_6, tn_7, tn_8, tn_9, tn_10, tn_11, tn_12, tn_13, tn_paper_1, tn_paper_2, underline, card1, card2, card3, card4
+  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, paper_1, paper_2, tn_1, tn_2, tn_3, tn_4, tn_5, tn_6, tn_7, tn_8, tn_9, tn_10, tn_11, tn_12, tn_13, tn_paper_1, tn_paper_2, underline, card1, card2, card3, card4, trustee0, trustee1, trustee2, trustee3, trustee4, trustee5, trustee6
 };
