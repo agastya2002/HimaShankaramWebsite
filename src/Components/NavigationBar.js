@@ -5,6 +5,7 @@ import '../css/NavigationBar.css';
 
 function NavigationBar() {
   return (
+    <>
     <Navbar collapseOnSelect expand="lg" variant="light" sticky="top">
       <Navbar.Brand href="/#home"><span className="brand">Hima Shankaram</span><div className="text-center">Charitable Trust</div></Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -18,6 +19,7 @@ function NavigationBar() {
         </Nav>
       </ Navbar.Collapse>
     </Navbar>
+    </>
   )
 }
 

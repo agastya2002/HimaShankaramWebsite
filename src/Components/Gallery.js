@@ -3,6 +3,8 @@ import Carousel from 'react-gallery-carousel';
 import 'react-gallery-carousel/dist/index.css';
 import { img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, paper_1, paper_2, tn_1, tn_2, tn_3, tn_4, tn_5, tn_6, tn_7, tn_8, tn_9, tn_10, tn_11, tn_12, tn_13, tn_paper_1, tn_paper_2, underline} from '../images/index.js';
 import '../css/Home.css'
+import { motion } from 'framer-motion';
+import { animationThree, transition } from '../animations';
 
 function Gallery() {
   const imgs = [
@@ -69,13 +71,21 @@ function Gallery() {
   ];
 
   return (
-    <div id="gallery" className="carousel-container gal">
+    <motion.div
+      initial='out'
+      animate='in'
+      exit='out'
+      variants={animationThree}
+      transition={transition}
+      id="gallery" 
+      className="carousel-container gal"
+    >
       <div className="gallery">
         <h1>Gallery</h1>
         <img src={underline} alt=''/>
       </div>
       <Carousel images={imgs} />
-    </div>
+    </motion.div>
   );
 }
 

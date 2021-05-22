@@ -3,11 +3,20 @@ import {Row, Col} from 'react-bootstrap'
 import FlipCard from './FlipCard.js'
 import '../css/Home.css'
 import { underline, card1, card2, card3, card4} from '../images/index.js';
+import { motion } from 'framer-motion';
+import { animationThree, transition } from '../animations';
 
 
 function Vision() {
   return (
-    <div id="vision" >
+    <motion.div
+      initial='out'
+      animate='in'
+      exit='out'
+      variants={animationThree}
+      transition={transition}
+      id="vision" 
+    >
       <div className="vision">
         <h1>Vision</h1>
         <img src={underline} alt=''/>
@@ -28,7 +37,7 @@ function Vision() {
           </Col>
         </Row>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -3,10 +3,20 @@ import Objective from './Objective.js'
 import {Row, Col} from 'react-bootstrap'
 import '../css/Home.css'
 import { underline} from '../images/index.js';
+import { motion } from 'framer-motion';
+import { animationThree, transition } from '../animations';
 
 function Objectives() {
   return (
-    <div id="objectives" className="objectives">
+    <motion.div
+      initial='out'
+      animate='in'
+      exit='out'
+      variants={animationThree}
+      transition={transition}
+      id="objectives"
+      className="objectives"
+    >
       <h1>Our Main Objectives</h1>
       <img src={underline} alt=''/>
       <div className="objRow">
@@ -31,7 +41,7 @@ function Objectives() {
         </Col>
       </Row>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
