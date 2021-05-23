@@ -21,10 +21,10 @@ function Objectives() {
       <img src={underline} alt=''/>
       <div className="objRow">
       <Row className="objRowSub">
-        <Col xs={12} md={6} lg={4}>
+        <Col xs={12} md={6} lg={6}>
           <Objective icon={<i class="fa fa-building icon" aria-hidden="true"/>} description="To support schools, orphanages and widow homes." />
         </Col>
-        <Col xs={12} md={6} lg={4}>
+        <Col xs={12} md={6} lg={6}>
           <Objective icon={<i class="fa fa-road icon" aria-hidden="true"/>} description="To support establishing and maintaining public amenities" />
         </Col>
         <Col xs={12} md={6} lg={4}>
@@ -33,10 +33,7 @@ function Objectives() {
         <Col xs={12} md={6} lg={4}>
           <Objective icon={<i class="fa fa-medkit icon" aria-hidden="true"/>} description="To provide food, medicine and clothing to the poor " />
         </Col>
-        <Col xs={12} md={6} lg={4}>
-        <Objective icon={<i class="fa fa-handshake-o icon" aria-hidden="true"/>} description="To support other charitable organizations" />
-        </Col>
-        <Col xs={12} md={6} lg={4}>
+        <Col xs={12} md={12} lg={4}>
         <Objective icon={<i class="fa fa-money icon" aria-hidden="true"/>} description="To provide support to meritorius students in need" />
         </Col>
       </Row>

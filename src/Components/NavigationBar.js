@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import '../css/NavigationBar.css';
+import { NavLink } from 'react-router-dom';
 
 function NavigationBar() {
   return (
@@ -11,11 +12,11 @@ function NavigationBar() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto ml-3">
-          <Nav.Link href="/home">Home</Nav.Link>
-          <Nav.Link href="/gallery">Gallery</Nav.Link>
-          <Nav.Link href="vision">Vision</Nav.Link>
-          <Nav.Link href="trustees">Trustees</Nav.Link>
-          <Nav.Link href="contact">Contact</Nav.Link>
+          <Nav.Link><NavLink style={{textDecoration: 'none', color: "gray"}} activeStyle={{ fontWeight: "bold", color: "black" }} to="/home">Home</NavLink></Nav.Link>
+          <Nav.Link><NavLink style={{textDecoration: 'none', color: "gray"}} activeStyle={{ fontWeight: "bold", color: "black" }} to="/gallery">Gallery</NavLink></Nav.Link>
+          <Nav.Link><NavLink style={{textDecoration: 'none', color: "gray"}} activeStyle={{ fontWeight: "bold", color: "black" }} to="/vision">Vision</NavLink></Nav.Link>
+          <Nav.Link><NavLink style={{textDecoration: 'none', color: "gray"}} activeStyle={{ fontWeight: "bold", color: "black" }} to="/trustees">Trustees</NavLink></Nav.Link>
+          <Nav.Link><NavLink style={{textDecoration: 'none', color: "gray"}} activeStyle={{ fontWeight: "bold", color: "black" }} to="/contact">Contact</NavLink></Nav.Link>
         </Nav>
       </ Navbar.Collapse>
     </Navbar>

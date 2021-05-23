@@ -14,9 +14,9 @@ import './App.css';
 function App() {
   return (
     <>
-      <NavgationBar />
       <BrowserRouter>
         <AnimatePresence exitBeforeEnter>
+          <NavgationBar />
           <Switch>
             <Route path='/home' component={Home} />
             <Route path='/gallery' component={Gallery} />
@@ -25,9 +25,9 @@ function App() {
             <Route path='/contact' component={Contact} />
             <Redirect to="/home" />
           </Switch>
+          <Footer />
         </AnimatePresence>
       </BrowserRouter>
-      <Footer />
     </>
   );
 }
