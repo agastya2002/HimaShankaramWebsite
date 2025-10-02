@@ -3,10 +3,12 @@
 }
 
 .rowItems {
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 20px;
+  display: flex;
 }
 
 .descr {
   font-size: 1.2em;
+  text-align: left;
 }

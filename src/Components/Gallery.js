@@ -1,92 +1,64 @@
-import React from 'react'
-import Carousel from 'react-gallery-carousel';
-import 'react-gallery-carousel/dist/index.css';
-import { img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, paper_1, paper_2, tn_1, tn_2, tn_3, tn_4, tn_5, tn_6, tn_7, tn_8, tn_9, tn_10, tn_11, tn_12, tn_13, tn_paper_1, tn_paper_2, underline} from '../images/index.js';
-import '../css/Home.css'
-import { motion } from 'framer-motion';
-import { animationThree, transition } from '../animations';
+import React from 'react';
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+import { underline } from '../images/index.js';
+import '../css/Home.css';
 
-function Gallery() {
-  const imgs = [
-    {
-      src: `${img1}`,
-      thumbnail: `${tn_1}`,
-    },
-    {
-      src: `${img2}`,
-      thumbnail: `${tn_2}`,
-    },
-    {
-      src: `${img3}`,
-      thumbnail: `${tn_3}`,
-    },
-    {
-      src: `${img4}`,
-      thumbnail: `${tn_4}`,
-    },
-    {
-      src: `${img5}`,
-      thumbnail: `${tn_5}`,
-    },
-    {
-      src: `${img6}`,
-      thumbnail: `${tn_6}`,
-    },
-    {
-      src: `${img7}`,
-      thumbnail: `${tn_7}`,
-    },
-    {
-      src: `${img8}`,
-      thumbnail: `${tn_8}`,
-    },
-    {
-      src: `${img9}`,
-      thumbnail: `${tn_9}`,
-    },
-    {
-      src: `${img10}`,
-      thumbnail: `${tn_10}`,
-    },
-    {
-      src: `${img11}`,
-      thumbnail: `${tn_11}`,
-    },
-    {
-      src: `${img12}`,
-      thumbnail: `${tn_12}`,
-    },
-    {
-      src: `${img13}`,
-      thumbnail: `${tn_13}`,
-    },
-    {
-      src: `${paper_1}`,
-      thumbnail: `${tn_paper_1}`,
-    },
-    {
-      src: `${paper_2}`,
-      thumbnail: `${tn_paper_2}`,
-    },
-  ];
+import img1 from '../images/1.png';
+import img2 from '../images/2.png';
+import img3 from '../images/3.png';
+import img4 from '../images/4.png';
+import img5 from '../images/5.png';
+import img6 from '../images/6.png';
+import img7 from '../images/7.png';
+import img8 from '../images/8.png';
+import img9 from '../images/9.png';
+import img10 from '../images/10.png';
+import img11 from '../images/11.png';
+import img12 from '../images/12.png';
+import img13 from '../images/13.png';
 
+const photos = [
+  { img: img1, title: 'Image 1' },
+  { img: img2, title: 'Image 2' },
+  { img: img3, title: 'Image 3' },
+  { img: img4, title: 'Image 4' },
+  { img: img5, title: 'Image 5' },
+  { img: img6, title: 'Image 6' },
+  { img: img7, title: 'Image 7' },
+  { img: img8, title: 'Image 8' },
+  { img: img9, title: 'Image 9' },
+  { img: img10, title: 'Image 10' },
+  { img: img11, title: 'Image 11' },
+  { img: img12, title: 'Image 12' },
+  { img: img13, title: 'Image 13' },
+];
+
+function GalleryComponent() {
   return (
-    <motion.div
-      initial='out'
-      animate='in'
-      exit='out'
-      variants={animationThree}
-      transition={transition}
-      id="gallery" 
-      className="carousel-container gal"
-    >
+    <div id="gallery" className="carousel-container gal">
       <div className="gallery">
         <h1>Gallery</h1>
-        <img src={underline} alt=''/>
+        <img src={underline} alt="" />
       </div>
-      <Carousel images={imgs} />
-    </motion.div>
+      <ImageList
+        variant="quilted"
+        cols={window.innerWidth < 600 ? 2 : 4} // Adjust columns based on screen size
+        rowHeight={window.innerWidth < 600 ? 150 : 256} // Adjust row height for smaller screens
+      >
+        {photos.map((item, index) => (
+          <ImageListItem key={index} cols={1} rows={1}>
+            <img
+              src={item.img}
+              alt={item.title}
+              loading="lazy"
+              style={{ objectFit: 'cover', width: '100%', height: '100%' }} // Ensure images are responsive
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
+    </div>
   );
 }
 
-export default Gallery;
+export default GalleryComponent;

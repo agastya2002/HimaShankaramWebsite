@@ -1,33 +1,26 @@
-import NavgationBar from './Components/NavigationBar.js'
-import Footer from './Components/Footer.js'
-import Home from './Components/Home.js'
-import Gallery from './Components/Gallery.js'
-import Vision from './Components/Vision.js'
-import Trustees from './Components/Trustees.js'
-import Contact from './Components/Contact.js'
-import { AnimatePresence } from 'framer-motion';
-
-
-import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
+import NavigationBar from './Components/NavigationBar.js';
+import Footer from './Components/Footer.js';
+import Home from './Components/Home.js';
+import Gallery from './Components/Gallery.js';
+import Vision from './Components/Vision.js';
+import Trustees from './Components/Trustees.js';
+import Contact from './Components/Contact.js';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <AnimatePresence exitBeforeEnter>
-          <NavgationBar />
-          <Switch>
-            <Route path='/home' component={Home} />
-            <Route path='/gallery' component={Gallery} />
-            <Route path='/vision' component={Vision} />
-            <Route path='/trustees' component={Trustees} />
-            <Route path='/contact' component={Contact} />
-            <Redirect to="/home" />
-          </Switch>
-          <Footer />
-        </AnimatePresence>
-      </BrowserRouter>
+      <NavigationBar />
+      <Routes>
+        <Route path='/home' element={<Home />} />
+        <Route path='/gallery' element={<Gallery />} />
+        <Route path='/vision' element={<Vision />} />
+        <Route path='/trustees' element={<Trustees />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='*' element={<Navigate to='/home' />} />
+      </Routes>
+      <Footer />
     </>
   );
 }

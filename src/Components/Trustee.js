@@ -1,24 +1,14 @@
-import React from 'react'
-import '../css/Trustee.css'
-import { motion } from 'framer-motion';
-import { animationOne, transition2 } from '../animations';
+import React from 'react';
+import '../css/Trustee.css';
 
-function trustee({img, name, sub}) {
+function Trustee({ img, name, sub }) {
   return (
-    <motion.div
-      initial='out'
-      animate='in'
-      exit='out'
-      variants={animationOne}
-      transition={transition2}
-      className="trustee"
-    >
+    <div className="trustee">
       <img className="trusteeImg" src={img} alt="" />
-      <h3>{name}<br/>{sub}</h3>
-    </motion.div>
-  )
+      <h3>{name}<br />{sub}</h3>
+    </div>
+  );
 }
 
-
-export default trustee
+export default Trustee;
 

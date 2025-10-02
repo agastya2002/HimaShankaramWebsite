@@ -15,6 +15,10 @@ section .section-title {
   color: black;
   background: rgba(254, 148, 1, 0.8) !important;
   margin: 0px 0px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
 }
 #footer h5{
 padding-left: 10px;
@@ -69,6 +73,27 @@ margin-right: 5px;
 
 #footer .about-body {
   color:black;
+}
+
+#footer .row.text-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+#footer .row.text-center .col-xs-12 {
+  flex: 1;
+  min-width: 50%;
+  text-align: left;
+}
+
+#footer ul.social {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
 }
 
 @media (max-width:767px){

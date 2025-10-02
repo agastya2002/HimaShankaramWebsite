@@ -1,21 +1,19 @@
-import React from 'react'
-import {Row, Col} from 'react-bootstrap'
-import '../css/Objective.css'
+import React from 'react';
+import '../css/Objective.css';
+import Grid from '@mui/material/Grid';
 
-function Objective({ icon, description}) {
+function Objective({ icon, description }) {
   return (
-    <div>
-      <Row className="rowItems">
-        <Col md={6} xs={12} className="pic">
-          {icon}
-        </Col>
-        <Col className="descr">
-          <p>{description}</p>
-        </Col>
-      </Row>
-    </div>
-  )
+    <Grid container spacing={2} className="rowItems" sx={{ alignItems: 'flex-start' }}>
+      <Grid item className="pic" marginRight={2}>
+        {icon}
+      </Grid>
+      <Grid item className="descr">
+        <p>{description}</p>
+      </Grid>
+    </Grid>
+  );
 }
 
-export default Objective
+export default Objective;
 
