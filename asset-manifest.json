@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/HimaShankaramWebsite/static/css/main.425b46a4.css",
-    "main.js": "/HimaShankaramWebsite/static/js/main.47dab360.js",
+    "main.js": "/HimaShankaramWebsite/static/js/main.64578364.js",
     "static/js/453.26e4f5f8.chunk.js": "/HimaShankaramWebsite/static/js/453.26e4f5f8.chunk.js",
     "static/media/13.png": "/HimaShankaramWebsite/static/media/13.f6aea903f8886ab5878a.png",
     "static/media/11.png": "/HimaShankaramWebsite/static/media/11.0a1b639c32d7c80509be.png",
@@ -39,11 +39,11 @@
     "static/media/card4.jpg": "/HimaShankaramWebsite/static/media/card4.be0df7f6487cf7569189.jpg",
     "index.html": "/HimaShankaramWebsite/index.html",
     "main.425b46a4.css.map": "/HimaShankaramWebsite/static/css/main.425b46a4.css.map",
-    "main.47dab360.js.map": "/HimaShankaramWebsite/static/js/main.47dab360.js.map",
+    "main.64578364.js.map": "/HimaShankaramWebsite/static/js/main.64578364.js.map",
     "453.26e4f5f8.chunk.js.map": "/HimaShankaramWebsite/static/js/453.26e4f5f8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.425b46a4.css",
-    "static/js/main.47dab360.js"
+    "static/js/main.64578364.js"
   ]
 }
