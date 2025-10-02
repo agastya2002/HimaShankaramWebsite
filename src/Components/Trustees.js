@@ -15,7 +15,13 @@ function Trustees() {
         <div className="trustee">
           <Trustee img={trustee0} name="G S RAJU" sub="Chairman" />
         </div>
-        <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))', maxWidth: '100vw' }}>
+        <div className="grid" style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+          justifyContent: 'center', 
+          gap: '20px', 
+          maxWidth: '100vw' 
+        }}>
           <Trustee img={trustee1} name="K V V G DIWAKAR" />
           <Trustee img={trustee2} name="D RAVI VARMA" />
           <Trustee img={trustee3} name="D C P VISALA" />
