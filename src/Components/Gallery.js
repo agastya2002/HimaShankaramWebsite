@@ -17,19 +17,29 @@ const photos = images.map((img, index) => ({
 
 function GalleryComponent() {
   const [open, setOpen] = useState(false);
-  const [selectedImg, setSelectedImg] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   const handleOpen = (img) => {
-    setSelectedImg(img);
+    const idx = photos.findIndex((p) => p.img === img);
+    setSelectedIndex(idx);
     setOpen(true);
   };
 
   const handleClose = (e) => {
-    // Only close if clicking on overlay or close button
     if (e.target.classList.contains('modal-overlay') || e.target.classList.contains('modal-close')) {
       setOpen(false);
-      setSelectedImg(null);
+      setSelectedIndex(null);
     }
+  };
+
+  const handlePrev = (e) => {
+    e.stopPropagation();
+    if (selectedIndex > 0) setSelectedIndex(selectedIndex - 1);
+  };
+
+  const handleNext = (e) => {
+    e.stopPropagation();
+    if (selectedIndex < photos.length - 1) setSelectedIndex(selectedIndex + 1);
   };
 
   return (
@@ -57,9 +67,57 @@ function GalleryComponent() {
       </ImageList>
       {open && (
         <div className="modal-overlay" onClick={handleClose} style={{marginTop: '2.5rem'}}>
-          <div className="modal-content">
+          <div className="modal-content" style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <button className="modal-close" onClick={handleClose}>&times;</button>
-            <img src={selectedImg} alt="Full" className="modal-img" />
+            {/* Left Arrow */}
+            {selectedIndex > 0 && (
+              <button
+                className="modal-arrow modal-arrow-left"
+                onClick={handlePrev}
+                style={{
+                  position: 'absolute',
+                  left: 0,
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  fontSize: '2rem',
+                  background: 'none',
+                  border: 'none',
+                  color: '#fff',
+                  cursor: 'pointer',
+                  zIndex: 2,
+                  textShadow: '0 2px 8px rgba(0,0,0,0.5)',
+                  filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))'
+                }}
+                aria-label="Previous image"
+              >
+                &#8592;
+              </button>
+            )}
+            <img src={photos[selectedIndex].img} alt="Full" className="modal-img" />
+            {/* Right Arrow */}
+            {selectedIndex < photos.length - 1 && (
+              <button
+                className="modal-arrow modal-arrow-right"
+                onClick={handleNext}
+                style={{
+                  position: 'absolute',
+                  right: 0,
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  fontSize: '2rem',
+                  background: 'none',
+                  border: 'none',
+                  color: '#fff',
+                  cursor: 'pointer',
+                  zIndex: 2,
+                  textShadow: '0 2px 8px rgba(0,0,0,0.5)',
+                  filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))'
+                }}
+                aria-label="Next image"
+              >
+                &#8594;
+              </button>
+            )}
           </div>
         </div>
       )}
