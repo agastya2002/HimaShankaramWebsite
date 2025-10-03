@@ -106,7 +106,6 @@ function GalleryComponent() {
           onTouchEnd={handleTouchEnd}
         >
           <div className="modal-content" style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <button className="modal-close" onClick={handleClose}>&times;</button>
             {/* Left Arrow */}
             {selectedIndex > 0 && (
               <button
