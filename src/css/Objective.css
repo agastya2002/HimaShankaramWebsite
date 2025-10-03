@@ -70,7 +70,7 @@
     bottom: 0;
     padding: 0 !important;
     margin: 0 !important;
-    background: rgba(0,36,51,0.4);
+    /* background: rgba(0,36,51,0.4); */
     color: #fff;
     justify-content: center;
     align-items: center;
