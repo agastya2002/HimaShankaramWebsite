@@ -42,6 +42,37 @@ function GalleryComponent() {
     if (selectedIndex < photos.length - 1) setSelectedIndex(selectedIndex + 1);
   };
 
+  // Swipe gesture state
+  const [touchStartX, setTouchStartX] = useState(null);
+  const [touchEndX, setTouchEndX] = useState(null);
+
+  // Swipe handlers
+  const handleTouchStart = (e) => {
+    if (e.touches && e.touches.length === 1) {
+      setTouchStartX(e.touches[0].clientX);
+      setTouchEndX(null);
+    }
+  };
+  const handleTouchMove = (e) => {
+    if (e.touches && e.touches.length === 1) {
+      setTouchEndX(e.touches[0].clientX);
+    }
+  };
+  const handleTouchEnd = () => {
+    if (touchStartX !== null && touchEndX !== null) {
+      const dx = touchEndX - touchStartX;
+      if (Math.abs(dx) > 50) {
+        if (dx < 0 && selectedIndex < photos.length - 1) {
+          setSelectedIndex(selectedIndex + 1); // swipe left, next
+        } else if (dx > 0 && selectedIndex > 0) {
+          setSelectedIndex(selectedIndex - 1); // swipe right, prev
+        }
+      }
+    }
+    setTouchStartX(null);
+    setTouchEndX(null);
+  };
+
   return (
     <div id="gallery" className="carousel-container gal">
       <div className="gallery">
@@ -66,7 +97,14 @@ function GalleryComponent() {
         ))}
       </ImageList>
       {open && (
-        <div className="modal-overlay" onClick={handleClose} style={{marginTop: '2.5rem'}}>
+        <div
+          className="modal-overlay"
+          onClick={handleClose}
+          style={{marginTop: '2.5rem'}}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <div className="modal-content" style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <button className="modal-close" onClick={handleClose}>&times;</button>
             {/* Left Arrow */}
@@ -75,18 +113,21 @@ function GalleryComponent() {
                 className="modal-arrow modal-arrow-left"
                 onClick={handlePrev}
                 style={{
-                  position: 'absolute',
+                  position: 'fixed',
                   left: 0,
                   top: '50%',
                   transform: 'translateY(-50%)',
-                  fontSize: '2rem',
+                  fontSize: '2.5rem',
                   background: 'none',
                   border: 'none',
                   color: '#fff',
                   cursor: 'pointer',
-                  zIndex: 2,
+                  zIndex: 10001,
                   textShadow: '0 2px 8px rgba(0,0,0,0.5)',
-                  filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))'
+                  filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))',
+                  padding: '0.5rem 1rem',
+                  outline: 'none',
+                  userSelect: 'none',
                 }}
                 aria-label="Previous image"
               >
@@ -100,18 +141,21 @@ function GalleryComponent() {
                 className="modal-arrow modal-arrow-right"
                 onClick={handleNext}
                 style={{
-                  position: 'absolute',
+                  position: 'fixed',
                   right: 0,
                   top: '50%',
                   transform: 'translateY(-50%)',
-                  fontSize: '2rem',
+                  fontSize: '2.5rem',
                   background: 'none',
                   border: 'none',
                   color: '#fff',
                   cursor: 'pointer',
-                  zIndex: 2,
+                  zIndex: 10001,
                   textShadow: '0 2px 8px rgba(0,0,0,0.5)',
-                  filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))'
+                  filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.4))',
+                  padding: '0.5rem 1rem',
+                  outline: 'none',
+                  userSelect: 'none',
                 }}
                 aria-label="Next image"
               >
