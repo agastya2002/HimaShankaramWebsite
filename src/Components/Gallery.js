@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { underline } from '../images/index.js';
@@ -73,11 +73,14 @@ function GalleryComponent() {
     if (selectedIndex < photos.length - 1) setSelectedIndex(selectedIndex + 1);
   };
 
-  // Swipe gesture state
+  // Swipe gesture state and animation
   const [touchStartX, setTouchStartX] = useState(null);
   const [touchEndX, setTouchEndX] = useState(null);
+  const [slideDirection, setSlideDirection] = useState(null); // 'left' or 'right'
+  const [pendingIndex, setPendingIndex] = useState(null);
+  const imgWrapperRef = useRef(null);
 
-  // Swipe handlers
+  // Swipe handlers with animation
   const handleTouchStart = (e) => {
     if (e.touches && e.touches.length === 1) {
       setTouchStartX(e.touches[0].clientX);
@@ -94,15 +97,34 @@ function GalleryComponent() {
       const dx = touchEndX - touchStartX;
       if (Math.abs(dx) > 50) {
         if (dx < 0 && selectedIndex < photos.length - 1) {
-          setSelectedIndex(selectedIndex + 1); // swipe left, next
+          setSlideDirection('left');
+          setPendingIndex(selectedIndex + 1);
         } else if (dx > 0 && selectedIndex > 0) {
-          setSelectedIndex(selectedIndex - 1); // swipe right, prev
+          setSlideDirection('right');
+          setPendingIndex(selectedIndex - 1);
         }
       }
     }
     setTouchStartX(null);
     setTouchEndX(null);
   };
+
+  // After animation, update image
+  useEffect(() => {
+    if (!slideDirection) return;
+    const handleAnimEnd = () => {
+      if (pendingIndex !== null) {
+        setSelectedIndex(pendingIndex);
+      }
+      setSlideDirection(null);
+      setPendingIndex(null);
+    };
+    const node = imgWrapperRef.current;
+    if (node) {
+      node.addEventListener('animationend', handleAnimEnd);
+      return () => node.removeEventListener('animationend', handleAnimEnd);
+    }
+  }, [slideDirection, pendingIndex]);
 
   return (
     <div id="gallery" className="carousel-container gal">
@@ -164,7 +186,13 @@ function GalleryComponent() {
                 &#8592;
               </button>
             )}
-            <img src={photos[selectedIndex].img} alt="Full" className="modal-img" />
+            <div
+              ref={imgWrapperRef}
+              className={`modal-img-wrapper${slideDirection ? ` slide-${slideDirection}` : ''}`}
+              style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            >
+              <img src={photos[selectedIndex].img} alt="Full" className="modal-img" />
+            </div>
             {/* Right Arrow */}
             {selectedIndex < photos.length - 1 && (
               <button
