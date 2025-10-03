@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { underline } from '../images/index.js';
@@ -8,16 +8,47 @@ import '../css/Home.css';
 const importAll = (requireContext) => requireContext.keys().map(requireContext);
 const images = importAll(require.context('../images/gallery', false, /\.(png|jpe?g|svg)$/));
 
-// Create the photos array dynamically 
-const photos = images.map((img, index) => ({
-  img,
-  title: `Image ${index + 1}`,
-}));
+// Create the photos array dynamically with varied rows and cols for quilted effect
+const quiltPattern = [
+  { rows: 2, cols: 2 },
+  { rows: 1, cols: 1 },
+  { rows: 1, cols: 1 },
+  { rows: 1, cols: 2 },
+  { rows: 2, cols: 1 },
+  { rows: 1, cols: 1 },
+  { rows: 1, cols: 1 },
+  { rows: 1, cols: 2 },
+  { rows: 2, cols: 1 },
+  { rows: 1, cols: 1 },
+];
+const photos = images.map((img, index) => {
+  const pattern = quiltPattern[index % quiltPattern.length];
+  return {
+    img,
+    title: `Image ${index + 1}`,
+    rows: pattern.rows,
+    cols: pattern.cols,
+  };
+});
 
 
 function GalleryComponent() {
   const [open, setOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(null);
+
+  // Keyboard navigation for modal
+  useEffect(() => {
+    if (!open) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'ArrowLeft' && selectedIndex > 0) {
+        setSelectedIndex((idx) => Math.max(0, idx - 1));
+      } else if (e.key === 'ArrowRight' && selectedIndex < photos.length - 1) {
+        setSelectedIndex((idx) => Math.min(photos.length - 1, idx + 1));
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [open, selectedIndex, photos.length]);
 
   const handleOpen = (img) => {
     const idx = photos.findIndex((p) => p.img === img);
@@ -80,17 +111,17 @@ function GalleryComponent() {
         <img src={underline} alt="" />
       </div>
       <ImageList
-        variant="quilted"
+        variant="masonry"
         cols={window.innerWidth < 600 ? 2 : 4}
-        rowHeight={window.innerWidth < 600 ? 150 : 256}
+        gap={8}
       >
         {photos.map((item, index) => (
-          <ImageListItem key={index} cols={1} rows={1}>
+          <ImageListItem key={index}>
             <img
               src={item.img}
               alt={item.title}
               loading="lazy"
-              style={{ objectFit: 'cover', width: '100%', height: '100%', cursor: 'pointer' }}
+              style={{ objectFit: 'cover', width: '100%', cursor: 'pointer' }}
               onClick={() => handleOpen(item.img)}
             />
           </ImageListItem>
