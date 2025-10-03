@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { underline } from '../images/index.js';
@@ -14,7 +14,24 @@ const photos = images.map((img, index) => ({
   title: `Image ${index + 1}`,
 }));
 
+
 function GalleryComponent() {
+  const [open, setOpen] = useState(false);
+  const [selectedImg, setSelectedImg] = useState(null);
+
+  const handleOpen = (img) => {
+    setSelectedImg(img);
+    setOpen(true);
+  };
+
+  const handleClose = (e) => {
+    // Only close if clicking on overlay or close button
+    if (e.target.classList.contains('modal-overlay') || e.target.classList.contains('modal-close')) {
+      setOpen(false);
+      setSelectedImg(null);
+    }
+  };
+
   return (
     <div id="gallery" className="carousel-container gal">
       <div className="gallery">
@@ -23,8 +40,8 @@ function GalleryComponent() {
       </div>
       <ImageList
         variant="quilted"
-        cols={window.innerWidth < 600 ? 2 : 4} // Adjust columns based on screen size
-        rowHeight={window.innerWidth < 600 ? 150 : 256} // Adjust row height for smaller screens
+        cols={window.innerWidth < 600 ? 2 : 4}
+        rowHeight={window.innerWidth < 600 ? 150 : 256}
       >
         {photos.map((item, index) => (
           <ImageListItem key={index} cols={1} rows={1}>
@@ -32,11 +49,20 @@ function GalleryComponent() {
               src={item.img}
               alt={item.title}
               loading="lazy"
-              style={{ objectFit: 'cover', width: '100%', height: '100%' }} // Ensure images are responsive
+              style={{ objectFit: 'cover', width: '100%', height: '100%', cursor: 'pointer' }}
+              onClick={() => handleOpen(item.img)}
             />
           </ImageListItem>
         ))}
       </ImageList>
+      {open && (
+        <div className="modal-overlay" onClick={handleClose} style={{marginTop: '2.5rem'}}>
+          <div className="modal-content">
+            <button className="modal-close" onClick={handleClose}>&times;</button>
+            <img src={selectedImg} alt="Full" className="modal-img" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
