@@ -24,7 +24,7 @@ function NavigationBar() {
   const isMobile = window.innerWidth <= 600;
 
   return (
-    <AppBar position="sticky" color="default">
+    <AppBar position="sticky" color="default" style={{backgroundColor: 'floralwhite'}} >
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'left', margin: '10px' }}>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>

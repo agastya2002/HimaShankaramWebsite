@@ -6,7 +6,6 @@
   background-size: cover;
   height: 90vh;
   width: 100vw;
-  background-color: #E78A39;
 }
 
 @media (max-width: 768px) {
@@ -29,12 +28,11 @@ section {
 section h1 {
   text-align: center;
   font-size: 4em;
-  color: #000;
-  background:  #FEA501;
-  border-radius: 20px;
+  color: #002433;
+  background: #7EA0BF;
+  border-radius: 0;
   padding: 20px 40px;
-  margin-bottom: 8px;
-  /* mix-blend-mode: screen; */
+  margin-bottom: 0;
 }
 
 @media (max-width: 1200px) {
@@ -46,13 +44,11 @@ section h1 {
 /* Objectives */
 .objectives {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 0;
+  padding: 0;
 }
 
-.icon {
-  font-size: 8em;
-  color: #FEA501;
-}
+
 
 @media (max-width: 768px) { 
   .icon {

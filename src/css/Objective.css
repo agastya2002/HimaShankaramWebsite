@@ -1,14 +1,80 @@
-.pic {
+
+.objective-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin: 0;
+  width: 100%;
+  min-height: 300px;
+}
+
+.objective-container.reverse {
+  flex-direction: row-reverse;
+}
+
+.objective-image {
+  flex: 0 0 50%;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 0;
+  background: #002433;
+  /* Center image horizontally and vertically */
   text-align: center;
 }
 
-.rowItems {
-  align-items: flex-start;
-  margin-bottom: 20px;
-  display: flex;
+.objective-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  aspect-ratio: 1/1;
+  max-height: 400px;
+  background: #002433;
 }
 
-.descr {
-  font-size: 1.2em;
-  text-align: left;
+.objective-text {
+  flex: 0 0 50%;
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  color: #002433;
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  .objective-container {
+    flex-direction: column;
+    position: relative;
+    min-height: 250px;
+    /* background: #002433; */
+  }
+  .objective-container.reverse {
+    flex-direction: column;
+  }
+  .objective-image, .objective-text {
+    width: 100%;
+    max-width: 100%;
+  }
+  .objective-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.5rem;
+    background: rgba(0,36,51,0.4);
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .objective-image img {
+    aspect-ratio: 16/9;
+    max-height: 300px;
+    /* background: #002433; */
+  }
 }

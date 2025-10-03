@@ -17,7 +17,7 @@ function Trustees() {
         </div>
         <div className="grid" style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', 
           justifyContent: 'center', 
           gap: '20px', 
           maxWidth: '100vw' 
