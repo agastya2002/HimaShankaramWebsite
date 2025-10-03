@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f0534caa.css",
-    "main.js": "/static/js/main.7a7cb40c.js",
+    "main.css": "/static/css/main.e4813504.css",
+    "main.js": "/static/js/main.93d41b4f.js",
     "static/js/453.3cc3fe02.chunk.js": "/static/js/453.3cc3fe02.chunk.js",
     "static/media/13.png": "/static/media/13.f6aea903f8886ab5878a.png",
     "static/media/11.png": "/static/media/11.0a1b639c32d7c80509be.png",
@@ -54,6 +54,7 @@
     "static/media/IMG-20251003-WA0061.jpg": "/static/media/IMG-20251003-WA0061.8deb7aeafa98eec39cc1.jpg",
     "static/media/IMG-20251003-WA0093.jpg": "/static/media/IMG-20251003-WA0093.fbf94b9845c4b8680ccb.jpg",
     "static/media/IMG-20251003-WA0089.jpg": "/static/media/IMG-20251003-WA0089.453dea685dcb06e52ea0.jpg",
+    "static/media/studentSup.jpg": "/static/media/studentSup.ca607b55f229289cce8b.jpg",
     "static/media/fontawesome-webfont.eot": "/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfont.ttf?v=4.7.0": "/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
     "static/media/IMG-20251003-WA0096.jpg": "/static/media/IMG-20251003-WA0096.7e3f27f2d3e2feba3890.jpg",
@@ -65,14 +66,14 @@
     "static/media/IMG-20251003-WA0112.jpg": "/static/media/IMG-20251003-WA0112.812a2b2b7b538a251db4.jpg",
     "static/media/IMG-20251003-WA0100.jpg": "/static/media/IMG-20251003-WA0100.4f81c3b0d7e21b6d863e.jpg",
     "static/media/IMG-20251003-WA0113.jpg": "/static/media/IMG-20251003-WA0113.248bcdb21e6a1d40f4ac.jpg",
-    "static/media/IMG-20251003-WA0058.jpg": "/static/media/IMG-20251003-WA0058.895f8c68ff26273cf096.jpg",
+    "static/media/aid.jpg": "/static/media/aid.895f8c68ff26273cf096.jpg",
     "static/media/IMG-20251003-WA0059.jpg": "/static/media/IMG-20251003-WA0059.7d84cc24c2e00c4dcaaa.jpg",
     "static/media/IMG-20251003-WA0043.jpg": "/static/media/IMG-20251003-WA0043.80f80e627d7a40b4bee5.jpg",
-    "static/media/studentSup.jpg": "/static/media/studentSup.69dc666b6bae2bf95b4a.jpg",
+    "static/media/studentSup-old.jpg": "/static/media/studentSup-old.69dc666b6bae2bf95b4a.jpg",
     "static/media/IMG-20251003-WA0142.jpg": "/static/media/IMG-20251003-WA0142.2e6c6de9fc3a738b8584.jpg",
     "static/media/IMG-20251003-WA0099.jpg": "/static/media/IMG-20251003-WA0099.6c7f824ef545a5e4f951.jpg",
     "static/media/IMG-20251003-WA0045.jpg": "/static/media/IMG-20251003-WA0045.4d093f30658400a4213c.jpg",
-    "static/media/aid.jpg": "/static/media/aid.feb45dc1ec5443b8ca82.jpg",
+    "static/media/aid-old.jpg": "/static/media/aid-old.feb45dc1ec5443b8ca82.jpg",
     "static/media/IMG-20251003-WA0128.jpg": "/static/media/IMG-20251003-WA0128.5563d30099506d49466d.jpg",
     "static/media/IMG-20251003-WA0087.jpg": "/static/media/IMG-20251003-WA0087.9a63affd59549e141e40.jpg",
     "static/media/disasterRelief.jpg": "/static/media/disasterRelief.dd7ed05d931d13fdfcfc.jpg",
@@ -90,7 +91,6 @@
     "static/media/IMG-20251003-WA0117.jpg": "/static/media/IMG-20251003-WA0117.6cb00c3ce5811e064e8a.jpg",
     "static/media/IMG-20251003-WA0131.jpg": "/static/media/IMG-20251003-WA0131.02da8907b60f12ac36c2.jpg",
     "static/media/IMG-20251003-WA0123.jpg": "/static/media/IMG-20251003-WA0123.f984c86249bc5de7d73c.jpg",
-    "static/media/IMG-20251003-WA0133.jpg": "/static/media/IMG-20251003-WA0133.f8608be775e40f812fd6.jpg",
     "static/media/IMG-20251003-WA0052.jpg": "/static/media/IMG-20251003-WA0052.3d5897f57a17c933cfc3.jpg",
     "static/media/IMG-20251003-WA0127.jpg": "/static/media/IMG-20251003-WA0127.dea8b43df7cefa4fd630.jpg",
     "static/media/IMG-20251003-WA0121.jpg": "/static/media/IMG-20251003-WA0121.ba9fccf994e79838c0dc.jpg",
@@ -142,12 +142,12 @@
     "static/media/K V V G DIWAKAR.jpg": "/static/media/K V V G DIWAKAR.359788f070bf117cdddd.jpg",
     "static/media/card4.jpg": "/static/media/card4.be0df7f6487cf7569189.jpg",
     "index.html": "/index.html",
-    "main.f0534caa.css.map": "/static/css/main.f0534caa.css.map",
-    "main.7a7cb40c.js.map": "/static/js/main.7a7cb40c.js.map",
+    "main.e4813504.css.map": "/static/css/main.e4813504.css.map",
+    "main.93d41b4f.js.map": "/static/js/main.93d41b4f.js.map",
     "453.3cc3fe02.chunk.js.map": "/static/js/453.3cc3fe02.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f0534caa.css",
-    "static/js/main.7a7cb40c.js"
+    "static/css/main.e4813504.css",
+    "static/js/main.93d41b4f.js"
   ]
 }
