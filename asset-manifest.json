@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.9859f533.css",
-    "main.js": "/static/js/main.5bf26a24.js",
+    "main.js": "/static/js/main.0477c0fd.js",
     "static/js/453.3cc3fe02.chunk.js": "/static/js/453.3cc3fe02.chunk.js",
     "static/media/13.png": "/static/media/13.f6aea903f8886ab5878a.png",
     "static/media/11.png": "/static/media/11.0a1b639c32d7c80509be.png",
@@ -52,7 +52,7 @@
     "static/media/IMG-20251003-WA0038.jpg": "/static/media/IMG-20251003-WA0038.a858312cd4050c34f838.jpg",
     "static/media/IMG-20251003-WA0097.jpg": "/static/media/IMG-20251003-WA0097.aeaa28a63159b67d7aa4.jpg",
     "static/media/IMG-20251003-WA0061.jpg": "/static/media/IMG-20251003-WA0061.8deb7aeafa98eec39cc1.jpg",
-    "static/media/IMG-20251003-WA0093.jpg": "/static/media/IMG-20251003-WA0093.fbf94b9845c4b8680ccb.jpg",
+    "static/media/IMG-20251003-WA0091.jpg": "/static/media/IMG-20251003-WA0091.fbf94b9845c4b8680ccb.jpg",
     "static/media/IMG-20251003-WA0089.jpg": "/static/media/IMG-20251003-WA0089.453dea685dcb06e52ea0.jpg",
     "static/media/studentSup.jpg": "/static/media/studentSup.ca607b55f229289cce8b.jpg",
     "static/media/fontawesome-webfont.eot": "/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
@@ -104,13 +104,11 @@
     "static/media/fontawesome-webfont.woff?v=4.7.0": "/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
     "static/media/IMG-20251003-WA0134.jpg": "/static/media/IMG-20251003-WA0134.804c471edf36c9d33591.jpg",
     "static/media/IMG-20251003-WA0139.jpg": "/static/media/IMG-20251003-WA0139.4890c2a61aecceb441f3.jpg",
-    "static/media/IMG-20251003-WA0136.jpg": "/static/media/IMG-20251003-WA0136.6b76321f259bf5b4cf03.jpg",
     "static/media/IMG-20251003-WA0083.jpg": "/static/media/IMG-20251003-WA0083.e70ecebfaba7b5095ca3.jpg",
     "static/media/IMG-20251003-WA0073.jpg": "/static/media/IMG-20251003-WA0073.ef20d7b62eb1dc0186a3.jpg",
     "static/media/IMG-20251003-WA0079.jpg": "/static/media/IMG-20251003-WA0079.12d132c0dc5e9d3bb143.jpg",
     "static/media/IMG-20251003-WA0126.jpg": "/static/media/IMG-20251003-WA0126.a28f7b478b8c5192aeb8.jpg",
     "static/media/IMG-20251003-WA0046.jpg": "/static/media/IMG-20251003-WA0046.7732373ed25db5c6380a.jpg",
-    "static/media/IMG-20251003-WA0137.jpg": "/static/media/IMG-20251003-WA0137.afc99c13958ae938f91e.jpg",
     "static/media/IMG-20251003-WA0057.jpg": "/static/media/IMG-20251003-WA0057.a62512efc9367df53d1a.jpg",
     "static/media/IMG-20251003-WA0125.jpg": "/static/media/IMG-20251003-WA0125.cc90b5941cca5fe85614.jpg",
     "static/media/IMG-20251003-WA0082.jpg": "/static/media/IMG-20251003-WA0082.3e145dac960eecd5dbae.jpg",
@@ -142,11 +140,11 @@
     "static/media/card4.jpg": "/static/media/card4.be0df7f6487cf7569189.jpg",
     "index.html": "/index.html",
     "main.9859f533.css.map": "/static/css/main.9859f533.css.map",
-    "main.5bf26a24.js.map": "/static/js/main.5bf26a24.js.map",
+    "main.0477c0fd.js.map": "/static/js/main.0477c0fd.js.map",
     "453.3cc3fe02.chunk.js.map": "/static/js/453.3cc3fe02.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9859f533.css",
-    "static/js/main.5bf26a24.js"
+    "static/js/main.0477c0fd.js"
   ]
 }
