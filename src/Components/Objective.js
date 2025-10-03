@@ -9,7 +9,7 @@ function Objective({ image, title, description, reverse }) {
       </div>
       <div className="objective-text">
         <h2>{title}</h2>
-        <p>{description}</p>
+        <div>{description}</div>
       </div>
     </div>
   );
