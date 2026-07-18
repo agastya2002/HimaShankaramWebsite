@@ -24,12 +24,12 @@ function NavigationBar() {
   const isMobile = window.innerWidth <= 600;
 
   return (
-    <AppBar position="sticky" color="default" style={{backgroundColor: 'floralwhite'}} >
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'left', margin: '10px' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <span className="brand" style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Hima Shankaram</span>
-            <span style={{ fontSize: '1rem' }}>Charitable Trust</span>
+    <AppBar position="sticky" className="site-navbar" elevation={0}>
+      <Toolbar className="navbar-toolbar">
+        <Typography variant="h6" component="div" className="brand-block">
+          <div className="brand-stack">
+            <span className="brand-name">Hima Shankaram</span>
+            <span className="brand-subtitle">Charitable Trust</span>
           </div>
         </Typography>
         {isMobile ? (
@@ -39,6 +39,7 @@ function NavigationBar() {
               color="inherit"
               aria-label="menu"
               onClick={handleMenuOpen}
+              className="menu-button"
             >
               <MenuIcon />
             </IconButton>
@@ -46,29 +47,44 @@ function NavigationBar() {
               anchorEl={anchorEl}
               open={Boolean(anchorEl)}
               onClose={handleMenuClose}
+              PaperProps={{
+                className: 'mobile-menu-paper',
+                sx: {
+                  mt: 1,
+                  borderRadius: '16px',
+                  boxShadow: '0 18px 40px rgba(15, 76, 92, 0.14)',
+                  border: '1px solid rgba(15, 76, 92, 0.08)',
+                  overflow: 'hidden',
+                },
+              }}
+              MenuListProps={{
+                sx: {
+                  padding: 0,
+                },
+              }}
             >
-              <MenuItem onClick={handleMenuClose} component={NavLink} to="/home">Home</MenuItem>
-              <MenuItem onClick={handleMenuClose} component={NavLink} to="/gallery">Gallery</MenuItem>
-              <MenuItem onClick={handleMenuClose} component={NavLink} to="/vision">Vision</MenuItem>
-              <MenuItem onClick={handleMenuClose} component={NavLink} to="/trustees">Trustees</MenuItem>
-              <MenuItem onClick={handleMenuClose} component={NavLink} to="/contact">Contact</MenuItem>
+              <MenuItem onClick={handleMenuClose} component={NavLink} to="/home" className="mobile-nav-item">Home</MenuItem>
+              <MenuItem onClick={handleMenuClose} component={NavLink} to="/gallery" className="mobile-nav-item">Gallery</MenuItem>
+              <MenuItem onClick={handleMenuClose} component={NavLink} to="/vision" className="mobile-nav-item">Vision</MenuItem>
+              <MenuItem onClick={handleMenuClose} component={NavLink} to="/trustees" className="mobile-nav-item">Trustees</MenuItem>
+              <MenuItem onClick={handleMenuClose} component={NavLink} to="/contact" className="mobile-nav-item">Contact</MenuItem>
             </Menu>
           </>
         ) : (
-          <Box sx={{ display: 'flex', gap: 2 }}>
-            <Button color="inherit" component={NavLink} to="/home" style={({ isActive }) => (isActive ? { fontWeight: 'bold', color: 'black' } : { color: 'gray' })}>
+          <Box sx={{ display: 'flex', gap: 1 }}>
+            <Button color="inherit" component={NavLink} to="/home" className="nav-link" style={({ isActive }) => (isActive ? { fontWeight: '700', color: '#0f4c5c' } : { color: '#48616d' })}>
               Home
             </Button>
-            <Button color="inherit" component={NavLink} to="/gallery" style={({ isActive }) => (isActive ? { fontWeight: 'bold', color: 'black' } : { color: 'gray' })}>
+            <Button color="inherit" component={NavLink} to="/gallery" className="nav-link" style={({ isActive }) => (isActive ? { fontWeight: '700', color: '#0f4c5c' } : { color: '#48616d' })}>
               Gallery
             </Button>
-            <Button color="inherit" component={NavLink} to="/vision" style={({ isActive }) => (isActive ? { fontWeight: 'bold', color: 'black' } : { color: 'gray' })}>
+            <Button color="inherit" component={NavLink} to="/vision" className="nav-link" style={({ isActive }) => (isActive ? { fontWeight: '700', color: '#0f4c5c' } : { color: '#48616d' })}>
               Vision
             </Button>
-            <Button color="inherit" component={NavLink} to="/trustees" style={({ isActive }) => (isActive ? { fontWeight: 'bold', color: 'black' } : { color: 'gray' })}>
+            <Button color="inherit" component={NavLink} to="/trustees" className="nav-link" style={({ isActive }) => (isActive ? { fontWeight: '700', color: '#0f4c5c' } : { color: '#48616d' })}>
               Trustees
             </Button>
-            <Button color="inherit" component={NavLink} to="/contact" style={({ isActive }) => (isActive ? { fontWeight: 'bold', color: 'black' } : { color: 'gray' })}>
+            <Button color="inherit" component={NavLink} to="/contact" className="nav-link" style={({ isActive }) => (isActive ? { fontWeight: '700', color: '#0f4c5c' } : { color: '#48616d' })}>
               Contact
             </Button>
           </Box>

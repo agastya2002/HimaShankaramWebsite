@@ -5,11 +5,13 @@ import bannerImage from '../images/homeBanner.png';
 function Home() {
   return (
     <div>
+      <div className="home-hero">
         <img
           src={bannerImage}
           alt='Home Banner'
-          style={{ width: '100%', height: 'auto' }}
+          className="hero-banner"
         />
+      </div>
       <Objectives />
     </div>
   );

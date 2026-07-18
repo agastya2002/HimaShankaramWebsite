@@ -1,33 +1,85 @@
-import React from 'react';
-import FlipCard from './FlipCard.js';
+import React, { useState, useEffect } from 'react';
 import '../css/Home.css';
-import { underline, card1, card2, card3, card4 } from '../images/index.js';
-import Grid from '@mui/material/Grid';
+import { underline } from '../images/index.js';
+
+const visionItems = [
+  {
+    title: 'Home for Destitutes',
+    summary:
+      'A compassionate refuge for those facing abandonment, neglect, or extreme hardship.',
+    detail:
+      'We aspire to establish a safe and dignified home for destitute men, women, and children who have been left without support. This initiative reflects our commitment to restoring care, stability, and hope for people in their most vulnerable circumstances.',
+  },
+  {
+    title: 'Healthcare Access',
+    summary:
+      'Bringing essential care and preventive awareness to underserved communities.',
+    detail:
+      'Our vision includes reaching rural and underserved communities with basic healthcare services and awareness programs. By organizing medical camps and supporting preventive care, we aim to reduce suffering and strengthen well-being at the grassroots level.',
+  },
+  {
+    title: 'Value-Based Education',
+    summary:
+      'Nurturing both academic excellence and strong ethical character.',
+    detail:
+      'We believe education should develop both capability and character. Through scholarships, student support, and values-driven programs, we aim to prepare young people to contribute meaningfully to society with integrity, discipline, and purpose.',
+  },
+  {
+    title: 'Skill Development',
+    summary:
+      'Creating lasting self-reliance through practical training and opportunity.',
+    detail:
+      'Empowering individuals with practical skills is central to building sustainable futures. We seek to support training and livelihood-focused opportunities that enable people to become self-reliant and support their families with dignity.',
+  },
+];
 
 function Vision() {
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const toggleItem = (index) => {
+    if (!isMobile) return;
+    setActiveIndex((current) => (current === index ? null : index));
+  };
+
   return (
-    <>
-      <div className="vision">
+    <section className="vision-section">
+      <div className="section-heading vision-heading">
         <h1>Vision</h1>
         <img src={underline} alt="" />
       </div>
-      <div>
-        <Grid container spacing={2} width={'100%'} margin='auto' paddingTop='50px' justifyContent="center">
-          <Grid item >
-            <FlipCard img={card1} title="Home for Destitutes" descr="Our Future vision will be to establish, constitute and run a HOME for DESTITUTE men, women and/or children, who had been neglected by their kith and kin or orphans, having no means to lead decent lives. It is a harsh fact that elders/parents who are the foundation for the success and development of their children are facing severe hardships during twilight of their life time since the same children are abandoning them when they require due care and support. The Trust shall endeavour to render service to the needy, destitute personnel in such situations" />
-          </Grid>
-          <Grid item >
-            <FlipCard img={card2} title="Health Care Programs" descr="Poor Communities living in remote areas with little or no access to primary medical care need basic medical services available in their location, avoiding necessity to travel for basic medical needs. Further, still, in some poor remote communities, there exists certain lack of awareness to prevent certain deceases & disorders. The Trust envisions to identify such needy remote, poor communities and organize medical camps and awareness programs to address certain issues both in curative & preventive ways " />
-          </Grid>
-          <Grid item >
-            <FlipCard img={card3} title="Value based Education" descr="Spirit of Excellence in persuasion of primary, secondary and collegiate education is very essential in youth to be able to become employable upon completion of education. Further, value based education is essential to facilitate the youth to contribute to society upon completion of education. The Trust envisions to award scholarships to meritorious, extend assistance to bright needy students and organize character building programs for making the education to be value based  " />
-          </Grid>
-          <Grid item >
-            <FlipCard img={card4} title="Skill Training" descr="The Trust envisions to facilitate imparting training and skills to the needy to equip themselves to be able to win their livelihood on their own" />
-          </Grid>
-        </Grid>
+      <div className="vision-grid">
+        {visionItems.map((item, index) => {
+          const isOpen = activeIndex === index;
+          return (
+            <div className="vision-card-item" key={item.title}>
+              <button
+                className={`vision-panel ${isOpen ? 'open' : ''} ${!isMobile ? 'desktop-open' : ''}`}
+                type="button"
+                onClick={() => toggleItem(index)}
+                aria-expanded={isOpen}
+              >
+                <div className="vision-panel-header">
+                  <h2>{item.title}</h2>
+                  {isMobile && <span className="vision-toggle">{isOpen ? '−' : '+'}</span>}
+                </div>
+                {isMobile && <p className="vision-panel-summary">{item.summary}</p>}
+                <p className={`vision-panel-full ${!isMobile ? 'desktop-visible' : ''}`}>{item.detail}</p>
+              </button>
+            </div>
+          );
+        })}
       </div>
-    </>
+    </section>
   );
 }
 

@@ -1,22 +1,16 @@
-import React from 'react'
-import '../css/FlipCard.css'
+import React from 'react';
+import '../css/FlipCard.css';
 
-function FlipCard({img, title, descr}) {
+function FlipCard({ title, descr, className }) {
   return (
-    <div className="flip-card">
-      <div className="flip-card-inner">
-        <div className="flip-card-front">
-          <h2 className="centered">{title}</h2>
-          <img className="card-img" src={img} alt="Avatar" style={{"width":"100%","height":"100"}}/>
-        </div>
-        <div className="flip-card-back">
-          <h2>{title}</h2>
-          <p>{descr}</p>
-        </div>
+    <article className={`info-card ${className || ''}`.trim()}>
+      <div className="info-card-content">
+        <h2>{title}</h2>
+        <p>{descr}</p>
       </div>
-    </div>
-  )
+    </article>
+  );
 }
 
-export default FlipCard
+export default FlipCard;
 

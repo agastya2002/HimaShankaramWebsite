@@ -12,14 +12,16 @@ function App() {
   return (
     <>
       <NavigationBar />
-      <Routes>
-        <Route path='/home' element={<Home />} />
-        <Route path='/gallery' element={<Gallery />} />
-        <Route path='/vision' element={<Vision />} />
-        <Route path='/trustees' element={<Trustees />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='*' element={<Navigate to='/home' />} />
-      </Routes>
+      <main className="app-shell">
+        <Routes>
+          <Route path='/home' element={<Home />} />
+          <Route path='/gallery' element={<Gallery />} />
+          <Route path='/vision' element={<Vision />} />
+          <Route path='/trustees' element={<Trustees />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='*' element={<Navigate to='/home' />} />
+        </Routes>
+      </main>
       <Footer />
     </>
   );
